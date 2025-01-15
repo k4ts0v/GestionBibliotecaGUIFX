@@ -1,0 +1,38 @@
+/* Rounded corners for the ListView */
+.list-view {
+    /*-fx-background-color: transparent;*/
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+/* Style for the individual cells */
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0 5 0 5; /* Optional padding for better spacing */
+    -fx-min-height: 20; /* Min height for the cell */
+    -fx-pref-height: 20; /* Cell height */
+    -fx-max-height: 20; /* Max height for the cell */
+    -fx-alignment: CENTER_LEFT; /* Align text */
+}
+
+/* Style for selected cells */
+.list-cell:filled:selected, .list-cell:selected:focused {
+    -fx-background-color: #B66E12AA; /* Selection background */
+    -fx-text-fill: white; /* Optional text color for selection */
+}
+
+/* Style for the vertical scrollbar to make it Material-like */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #B66E12AA; /* Thumb color */
+    -fx-background-radius: 5; /* Rounded thumb */
+    -fx-padding: 5;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #D6D6D6; /* Track color */
+    -fx-background-radius: 7; /* Rounded track */
+}

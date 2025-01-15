@@ -1,0 +1,30 @@
+/*
+ * File: comboBox.css
+ * Project: Tuenti
+ * File Created: Monday, 18th November 2024 2:01:27 PM
+ * Author: Lucas Villa (k4ts0v@protonmail.com)
+ * -----
+ * Last Modified: Saturday, 23rd November 2024 10:36:28 PM
+ * Modified By: Lucas Villa (k4ts0v@protonmail.com)
+ */
+
+ .combo-box,  .combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: #A95E00;
+}
+
+.combo-box .text-field {
+    -fx-prompt-text:  #A95E00;
+    -fx-text:  #A95E00;
+}
+
+.combo-box .list-cell:selected:filled .text {
+    -fx-fill: #A95E00;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #A95E00;
+}

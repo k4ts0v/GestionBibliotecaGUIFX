@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootVBox" alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="798.0" style="-fx-background-color: #A95E00#B66E12;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lvg.ControladorLoginUsuario">
+   <children>
+      <GridPane alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="802.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <GridPane hgap="1.0" prefHeight="395.0" prefWidth="778.0" style="-fx-background-color: #FFFFFF;" vgap="1.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+        </rowConstraints>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <children>
+            <ComboBox fx:id="idioma" editable="false" onAction="#seleccionarIdioma" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="RIGHT">
+               <stylesheets>
+                  <URL value="@../css/comboBox.css" />
+               </stylesheets>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip fx:id="ttComboBox" text="%tt.comboBox" />
+               </tooltip>
+            </ComboBox>
+            <Label fx:id="lblTitulo" alignment="CENTER" prefHeight="27.0" prefWidth="283.0" text="%loginUsuario.lbl.titulo" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Poppins Regular" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUsuario" text="%login.lbl.usuario" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font></Label>
+            <TextField fx:id="txtUsuario" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip fx:id="ttTxtUsuario" text="%tt.login.txt.usuario" />
+               </tooltip>
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblContrasenha" text="%login.lbl.contrasenha" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+            <PasswordField fx:id="txtContrasenha" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="30.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="40.0" />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip fx:id="ttTxtContrasenha" text="%tt.login.txt.contrasenha" />
+               </tooltip>
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+            </PasswordField>
+            <Hyperlink fx:id="hlRecuperarContrasenha" alignment="CENTER_RIGHT" onAction="#recuperarContrasenha" prefHeight="0.0" prefWidth="193.0" text="%login.hl.recuperarContrasenha" textFill="#f58800" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Poppins Regular" size="9.0" />
+               </font>
+               <tooltip>
+                  <Tooltip fx:id="ttHlRecuperarContrasenha" text="%tt.login.hl.recuperarContrasenha" />
+               </tooltip>
+            </Hyperlink>
+            <Button fx:id="btnIniciarSesion" maxHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="194.0" style="-fx-background-color: #B66E12;" text="%login.btn.iniciarSesion" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+               <tooltip>
+                  <Tooltip fx:id="ttBtnIniciarSesion" text="%tt.login.btn.iniciarSesion" />
+               </tooltip>
+            </Button>
+            <Hyperlink fx:id="hlRegistro" alignment="TOP_CENTER" contentDisplay="TOP" onAction="#registro" prefHeight="25.0" prefWidth="193.0" text="%login.hl.registro" textFill="#f58800" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip fx:id="ttHlRegistro" text="%tt.login.hl.registro" />
+               </tooltip></Hyperlink>
+            <Hyperlink fx:id="hlMenuPrincipal" alignment="CENTER" contentDisplay="CENTER" onAction="#volverMenuPrincipal" prefHeight="84.0" prefWidth="193.0" text="%login.hl.menuPrincipal" textAlignment="CENTER" textFill="#f58800" GridPane.columnSpan="2147483647" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <tooltip>
+                  <Tooltip fx:id="ttHlMenuPrincipal" text="%login.hl.menuPrincipal" />
+               </tooltip>
+            </Hyperlink>
+            <HBox fx:id="hbValidacionUsuario" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="266.0" visible="false" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <!-- SVG Icon (adjust positioning and scale) -->
+                  <SVGPath content="M-196-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9C-172.1-232.8-182.8-222.1-196-222.1L-196-222.1z M-196-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3S-184.3-267.3-196-267.3L-196-267.3z M-197.4-236.1L-194.6-236.1L-194.6-233.3L-197.4-233.3z M-195.2-238.9L-196.8-238.9L-197.4-250.2L-197.4-258.7L-194.6-258.7L-194.6-250.2L-195.2-238.9z" fill="#f50000" scaleX="0.13" scaleY="0.13" translateY="-8.0">
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </SVGPath>
+
+                  <!-- Label with Text Wrapping enabled -->
+                  <Label fx:id="lblValidacionUsuario" alignment="CENTER" contentDisplay="CENTER" text="%login.UsuarioInvalido" textFill="#f50000" wrapText="true" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            <GridPane.margin>
+               <Insets />
+            </GridPane.margin>
+         </HBox>
+         </children>
+      </GridPane>
+   </children>
+</VBox>
