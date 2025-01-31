@@ -8,6 +8,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Clase que permite la creación de la base de datos basándose en el script proprcionado.
+ *
+ * @author Lucas V. (k4ts0v@protonmail.com)
+ * @version 1.0
+ * @since 1.0
+ */
 public class DDL {
 
     private final Connection conexion;
@@ -22,6 +29,7 @@ public class DDL {
      * @param nombreTabla Nombre de la tabla a verificar.
      * @return true si la tabla tiene datos, false en caso contrario.
      * @throws SQLException Si ocurre un error al consultar la tabla.
+     * @since 1.0
      */
     private boolean tablaTieneDatos(String nombreTabla) throws SQLException {
         String consulta = "SELECT EXISTS (SELECT 1 FROM " + nombreTabla + ")";
@@ -41,6 +49,7 @@ public class DDL {
      * @param rutaArchivo La ruta al archivo de script SQL.
      * @throws IOException  Si hay un error al leer el archivo.
      * @throws SQLException Si hay un error al ejecutar las sentencias SQL.
+     * @since 1.0
      */
     public void ejecutarScript(String rutaArchivo) throws IOException, SQLException {
         if (conexion == null || conexion.isClosed()) {
@@ -91,6 +100,12 @@ public class DDL {
             System.out.println("El script SQL se ejecutó correctamente.");
         }
     }
+
+    /**
+     * Método que crea la base de datos leyendo el script proporcionado. Es el punto de entrada de la clase.
+     *
+     * @since 1.0
+     */
 
     public void run() {
         try {

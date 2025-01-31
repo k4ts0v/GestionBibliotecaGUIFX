@@ -13,7 +13,12 @@ package com.lvg.modelo.dto;
 
 import java.util.Objects;
 
-// Clase libro, que representa los libros de la biblioteca.
+/**
+ * Clase libro, que representa los libros de la biblioteca.
+ * @author Lucas V. (k4ts0v@protonmail.com)
+ * @version 1.0
+ * @since 1.0
+ */
 public class Libro {
     Integer id; // Id del libro.
     private String titulo; // Título del libro.
@@ -28,6 +33,7 @@ public class Libro {
      * @param titulo Título del libro.
      * @param autor  Autor del libro.
      * @param isbn   ISBN del libro.
+     * @since 1.0
      */
     public Libro(Integer id, String titulo, String autor, String isbn) {
         setId(id);
@@ -42,6 +48,7 @@ public class Libro {
      * @param titulo Título del libro.
      * @param autor  Autor del libro.
      * @param isbn   ISBN del libro.
+     * @since 1.0
      */
     public Libro(String titulo, String autor,String isbn) {
         setTitulo(titulo);
@@ -55,6 +62,7 @@ public class Libro {
      * Getter que devuelve el id del libro.
      *
      * @return Id del libro.
+     * @since 1.0
      */
     public Integer getId() {
         return id;
@@ -64,6 +72,7 @@ public class Libro {
      * Setter que asigna el id a una instancia de libro.
      *
      * @param id Id a asignar.
+     * @since 1.0
      */
     public void setId(Integer id) {
         this.id = id;
@@ -73,6 +82,7 @@ public class Libro {
      * Getter que devuelve el título del libro.
      *
      * @return Título del libro.
+     * @since 1.0
      */
     public String getTitulo() {
         return titulo;
@@ -82,6 +92,7 @@ public class Libro {
      * Setter que asigna el titulo a una instancia de libro.
      *
      * @param titulo Titulo a asignar.
+     * @since 1.0
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -91,6 +102,7 @@ public class Libro {
      * Getter que devuelve el iSBN del libro.
      *
      * @return ISBN del libro.
+     * @since 1.0
      */
     public String getIsbn() {
         return isbn;
@@ -100,6 +112,7 @@ public class Libro {
      * Setter que asigna el isbn a una instancia de libro.
      *
      * @param isbn ISBN a asignar.
+     * @since 1.0
      */
     public void setIsbn(String isbn) {
         this.isbn = isbn;
@@ -118,6 +131,7 @@ public class Libro {
      * de hashing. Para ello, ha usado el ID.
      *
      * @return int - Hashcode generado en base al ID del libro.
+     * @since 1.0
      */
     @Override
     public int hashCode() {
@@ -131,6 +145,7 @@ public class Libro {
      *
      * @param e0 - La otra instancia de libro a usar para la comparación.
      * @return boolean - Si son iguales, devuelve verdadero, si no, falso.
+     * @since 1.0
      */
     @Override
     public boolean equals(Object obj) {
@@ -147,6 +162,7 @@ public class Libro {
      *
      * @return String formateada con toda la información de la instancia de la clase
      *         Libro.
+     * @since 1.0
      */
     @Override
     public String toString() {

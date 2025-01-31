@@ -1,13 +1,3 @@
-/*
- * File: App.java
- * Project: gestionbibliotecagui
- * File Created: Friday, 29th November 2024 9:02:11 AM
- * Author: Lucas Villa (k4ts0v@protonmail.com)
- * -----
- * Last Modified: Friday, 6th December 2024 10:25:35 PM
- * Modified By: Lucas Villa (k4ts0v@protonmail.com)
- */
-
 package com.lvg;
 
 import javafx.application.Application;
@@ -20,14 +10,29 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
+import com.lvg.controlador.ContextoApp;
+
+/**
+ * Clase principal de la aplicación que extiende la clase Application de JavaFX.
+ * @author Lucas V. (k4ts0v@protonmail.com)
+ * @version 1.0
+ * @since 1.0
+ */
 public class App extends Application {
 
-    private static Scene scene;
-    private static String lastLoadedFXML = ""; // To track the last loaded FXML
-    private static String previousLoadedFXML = ""; // To track the last loaded FXML
-    private static Stage primaryStage;
-    private static String fxmlActual = "";
+    private static Scene scene; // Escena principal de la aplicación.
+    private static String lastLoadedFXML = ""; // Para rastrear el último FXML cargado.
+    private static String previousLoadedFXML = ""; // Para rastrear el FXML anterior cargado.
+    private static Stage primaryStage; // El escenario principal de la aplicación.
+    private static String fxmlActual = ""; // FXML actualmente cargado.
 
+    /**
+     * Método de inicio de la aplicación.
+     *
+     * @param stage El escenario principal.
+     * @throws IOException Lanza una IOException si no se puede cargar el FXML.
+     * @since 1.0
+     */
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
@@ -37,33 +42,53 @@ public class App extends Application {
         stage.show();
     }
 
-    // This method sets the root and tracks the last loaded FXML
-    static void setRoot(String fxml) throws IOException {
+    /**
+     * Este método establece la raíz y rastrea el último FXML cargado.
+     *
+     * @param fxml El nombre del archivo FXML a cargar.
+     * @throws IOException Lanza una IOException si no se puede cargar el FXML.
+     * @since 1.0
+     */
+    public static void setRoot(String fxml) throws IOException {
         previousLoadedFXML = lastLoadedFXML;
         lastLoadedFXML = fxml;
         scene.setRoot(loadFXML(fxml));
         fxmlActual = fxml;
     }
 
+    /**
+     * Este método establece la raíz y pasa datos al controlador si se proporciona un inicializador.
+     *
+     * @param fxml El nombre del archivo FXML a cargar.
+     * @param initializer Función que inicializa el controlador con datos.
+     * @throws IOException Lanza una IOException si no se puede cargar el FXML.
+     * @since 1.0
+     */
     public static void setRootWithData(String fxml, Consumer<Object> initializer) throws IOException {
         Locale localeDefecto = ContextoApp.getIdioma() == null ? Locale.getDefault() : Locale.of(ContextoApp.getIdioma());
         FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         loader.setResources(ResourceBundle.getBundle("com.lvg.i18n.LB", localeDefecto));
         Parent root = loader.load();
     
-        // Pass data to the controller if initializer is provided
+        // Pasar datos al controlador si se proporciona un inicializador
         if (initializer != null) {
             initializer.accept(loader.getController());
         }
     
-        // Switch the scene
+        // Cambiar la escena
         Stage primaryStage = (Stage) getPrimaryStage().getScene().getWindow();
         primaryStage.getScene().setRoot(root);
         fxmlActual = fxml;
     }
-    
 
-    // Load the FXML file using FXMLLoader, and load the ResourceBundle for localization
+    /**
+     * Carga el archivo FXML usando FXMLLoader y carga el ResourceBundle para la localización.
+     *
+     * @param fxml El nombre del archivo FXML a cargar.
+     * @return El objeto Parent cargado desde el archivo FXML.
+     * @throws IOException Lanza una IOException si no se puede cargar el FXML.
+     * @since 1.0
+     */
     private static Parent loadFXML(String fxml) throws IOException {
         Locale localeDefecto = ContextoApp.getIdioma() == null ? Locale.getDefault() : Locale.of(ContextoApp.getIdioma());
         ResourceBundle bundle = ResourceBundle.getBundle("com.lvg.i18n.LB", localeDefecto);
@@ -71,21 +96,43 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    // Get the last loaded FXML name (for conditional actions)
+    /**
+     * Obtiene el nombre del último archivo FXML cargado (para acciones condicionales).
+     *
+     * @return El nombre del último archivo FXML cargado.
+     * @since 1.0
+     */
     public static String getLastLoadedFXML() {
         return previousLoadedFXML;
     }
 
+    /**
+     * Método principal de la aplicación.
+     *
+     * @param args Argumentos de la línea de comandos.
+     * @since 1.0
+     */
     public static void main(String[] args) {
         launch();
     }
 
+    /**
+     * Obtiene el escenario principal.
+     *
+     * @return El escenario principal.
+     * @since 1.0
+     */
     public static Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    /**
+     * Obtiene el nombre del archivo FXML actualmente cargado.
+     *
+     * @return El nombre del archivo FXML actualmente cargado.
+     * @since 1.0
+     */
     public static String getFxmlActual() {
         return fxmlActual;
-    }   
-    
+    }
 }

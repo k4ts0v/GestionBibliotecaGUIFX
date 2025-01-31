@@ -12,6 +12,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Clase que maneja la conexión a la base de datos.
+ *
+ * @author Lucas V. (k4ts0v@protonmail.com)
+ * @version 1.0
+ * @since 1.0
+ */
 public class JDBC {
     private static final String USER = "root"; // Usuario de la BD.
     private static final String PASSWORD = ""; // Contraseña del usuario especificado arriba.
@@ -48,6 +55,7 @@ public class JDBC {
      * Crea la base de datos si no existe.
      *
      * @throws SQLException Si ocurre un error al crear la base de datos.
+     * @since 1.0
      */
     private static void crearBaseDeDatos() throws SQLException {
         try (Connection conexion = DriverManager.getConnection(URL_BASE, USER, PASSWORD);
@@ -61,6 +69,7 @@ public class JDBC {
      * Genera una conexión al SGDB.
      * 
      * @return Connection - Objeto que permite la conexión a la base de datos.
+     * @since 1.0
      */
     public static Connection getConexion() {
         if (conexion == null) {
@@ -74,6 +83,7 @@ public class JDBC {
      * 
      * @throws SQLException Excepción lanzada en caso de que no se pueda cerrar la
      *                      conexión.
+     * @since 1.0
      */
     public static void close() throws SQLException {
         if (conexion != null) {

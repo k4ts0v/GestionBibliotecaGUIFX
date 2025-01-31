@@ -20,6 +20,13 @@ import java.util.ArrayList;
 
 import com.lvg.modelo.dto.Libro;
 
+
+/**
+ * Esta clase representa el DAO (Data Access Object) para la entidad Libro.
+ * @author Lucas V. (k4ts0v@protonmail.com)
+ * @version 1.0
+ * @since 1.0
+ */
 public class LibroDAO implements DAO<Libro> {
     private Connection conexion = JDBC.getConexion();
     private final String CREATE = "INSERT INTO Libro VALUES(?,?,?,?)";
@@ -30,9 +37,11 @@ public class LibroDAO implements DAO<Libro> {
 
     /**
      * Este método añade un libro a la BD.
+     *
      * @param j Objeto libro a añadir.
      * @return Devuelve 1 si la operación se ha realizado correctamente.
      * @throws SQLException Lanza una SQLException si no se ha podido crear el libro en la BD.
+     * @since 1.0
      */
         @Override
     public Integer create(Libro l) throws SQLException {
@@ -62,9 +71,11 @@ public class LibroDAO implements DAO<Libro> {
 
     /**
      * Este método lee el libro especificado (por ID) de la BD.
+     *
      * @param id ID del libro.
      * @return El objeto libro que ha sido leído.
      * @throws SQLException Lanza una SQLException si no se ha podido leer el libro de la BD.
+     * @since 1.0
      */
     @Override
     public Libro read(Libro l) throws SQLException {
@@ -84,8 +95,10 @@ public class LibroDAO implements DAO<Libro> {
 
     /**
      * Este método lee todos los libros que existen en la BD.
+     *
      * @return ArrayList<Libro> Lista de los libros existentes en la BD.
      * @throws SQLException Lanza una SQLException si no se ha podido leer el contenido de la BD.
+     * @since 1.0
      */
     @Override
     public ArrayList<Libro> readAll() throws SQLException {
@@ -104,9 +117,11 @@ public class LibroDAO implements DAO<Libro> {
 
     /**
      * Este método actualiza un libro de la BD en base a su ID.
+     *
      * @param l Libro a actualizar.
      * @return Devuelve 1 si se ha actualizado correctamente.
      * @throws SQLException Lanza una SQLException si no se ha podido actualizar el libro.
+     * @since 1.0
      */
     @Override
 public Integer update(Libro l) throws SQLException {
@@ -132,9 +147,11 @@ public Integer update(Libro l) throws SQLException {
 
     /**
      * Este método borra un libro de la BD en base a su ID.
+     *
      * @param l Libro a borrar.
      * @return Devuelve 1 si el libro se ha borrado correctamente.
      * @throws SQLException Lanza una SQLException si no se ha podido borrar el libro.
+     * @since 1.0
      */
     @Override
     public Integer delete(Libro l) throws SQLException {
@@ -149,9 +166,11 @@ public Integer update(Libro l) throws SQLException {
 
     /**
      * Este método genera un libro en base al ResultSet devuelto por una consulta.
+     *
      * @param rs - ResultSet de la consulta.
      * @return Objeto libro con los datos de la consulta.
      * @throws SQLException Lanza una SQLException si no se ha podido crear el libro.
+     * @since 1.0
      */
     public Libro getLibroRS(ResultSet rs) throws SQLException {
         return new Libro(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));

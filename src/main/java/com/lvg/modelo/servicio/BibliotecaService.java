@@ -3,7 +3,7 @@ package com.lvg.modelo.servicio;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.lvg.ContextoApp;
+import com.lvg.controlador.ContextoApp;
 import com.lvg.modelo.dao.DDL;
 import com.lvg.modelo.dao.LibroDAO;
 import com.lvg.modelo.dao.PrestamoDAO;
